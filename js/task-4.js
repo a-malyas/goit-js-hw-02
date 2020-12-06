@@ -1,32 +1,24 @@
 const formatString = function (string) {
-    
-    let stringSplit = string.split('');
-    let argToDelete;
-    let shortString;
+    const MAX_LENGTH = 40;
 
-    for (let i = 0; i < stringSplit.length; i++) {
-            
-        if (stringSplit.length > 40) {
-            argToDelete = stringSplit.length - 39;
-            stringSplit.splice(39, argToDelete, '...');
-            shortString = (stringSplit.join(' '));
-            return shortString;
-        } else {
-            return string;
-        }
-    }
+    if (string.length <= MAX_LENGTH) {
+        return string;
+    } 
+    return string.slice(0, MAX_LENGTH -3) + '...';
+    
 }
+
 
 //  * Вызовы функции для проверки работоспособности твоей реализации.
 
-//console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// // вернется оригинальная строка
+// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// вернется оригинальная строка
 
-// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// // вернется форматированная строка
+//console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+//вернется форматированная строка
 
 // console.log(formatString('Curabitur ligula sapien.'));
-// // вернется оригинальная строка
+// вернется оригинальная строка
 
 // console.log(
 //   formatString(
